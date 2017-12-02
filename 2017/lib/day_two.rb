@@ -20,6 +20,10 @@ class DayTwo
     @rows.map(&:range).reduce(0, :+)
   end
 
+  def evenly_divisible_checksum
+    @rows.map{ |row| row.permutation(2).detect{ |a,b| a % b == 0 }.reduce(:/) }.reduce(0, :+)
+  end
+
   private
 
   def process_file(path)
@@ -30,5 +34,3 @@ class DayTwo
     end
   end
 end
-
-# puts DayTwo.new("../data/day_two/spreadsheet.txt").checksum
