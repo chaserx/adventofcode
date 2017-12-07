@@ -7,7 +7,7 @@ module Policy
     end
 
     def valid?
-      !duplicates?
+      !duplicates? && !contains_anagrams?
     end
 
     private
@@ -15,6 +15,12 @@ module Policy
     # inspird by: https://stackoverflow.com/a/8922049/281699
     def duplicates?
       @phrase.split().group_by{ |e| e }.select{ |k, v| v.size > 1 }.any?
+    end
+
+    # NOTE(chaserx): part two adds an additional policy requirement around anagrams
+    #   here, we're just sorting the characters of the word in the group_by block
+    def contains_anagrams?
+      @phrase.split().group_by{ |e| e.chars.sort }.select{ |k, v| v.size > 1 }.any?
     end
   end
 end

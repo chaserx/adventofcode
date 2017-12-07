@@ -20,6 +20,12 @@ describe Policy::Passphrase do
         expect(Policy::Passphrase.new("aa bb cc dd aaa").valid?).to be true
       end
     end
+
+    context 'when the phrase contains anagrams' do
+      it 'returns false' do
+        expect(Policy::Passphrase.new("azr mjv raz arz rdfb").valid?).to be false
+      end
+    end
   end
 end
 
