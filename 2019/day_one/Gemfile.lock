@@ -1,0 +1,25 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    awesome_print (1.8.0)
+    irb (1.1.0)
+      reline (>= 0.0.1)
+    reline (0.0.7)
+    rubocop-sorbet (0.3.3)
+    sorbet (0.4.5085)
+      sorbet-static (= 0.4.5085)
+    sorbet-runtime (0.4.5085)
+    sorbet-static (0.4.5085-universal-darwin-14)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  awesome_print
+  irb (~> 1.1.0)
+  rubocop-sorbet
+  sorbet
+  sorbet-runtime
+
+BUNDLED WITH
+   2.0.2
